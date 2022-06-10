@@ -20,7 +20,7 @@ base_url = "https://habr.com"
 url = base_url + "/ru/all/"
 
 # Список слов для поиска
-WORDS = ['Python', 'Java']
+KEYWORDS = ['Python', 'Java']
 
 if __name__ == '__main__':
     response = requests.get(url, headers=HEADERS)
@@ -54,7 +54,7 @@ if __name__ == '__main__':
             preview_text = preview_text.text
 
 
-        for elem in WORDS:
+        for elem in KEYWORDS:
             pattern = f'{elem}\S*'
             if re.search(pattern, user_info) \
                     or re.search(pattern, user_info) \
