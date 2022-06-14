@@ -31,7 +31,6 @@ if __name__ == '__main__':
     articles = soup.find_all('article')
 
     for article in articles:
-        preview = article.find_all(class_='tm-article-snippet')
         user_info = article.find(class_="tm-article-snippet__meta").find(class_="tm-user-info__username") # text - надо проверять что есть такое поле и оно заполнено
         date_info = article.find(class_="tm-article-snippet__datetime-published").find("time").attrs["title"]
         title = article.find("h2").find("span")
